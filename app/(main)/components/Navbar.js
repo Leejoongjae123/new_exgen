@@ -26,9 +26,15 @@ const menuItems = [
   "Contact Us",
 ];
 
+import { useRouter } from 'next/navigation';
+
 export default function Component(props) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
+  const router = useRouter();
+  
+  const handleLogin = () => {
+    router.push('/login');
+  }
   return (
     <Navbar
       {...props}
@@ -86,6 +92,7 @@ export default function Component(props) {
           <Button
             radius="full"
             color='primary'
+            onClick={handleLogin}
           >
             Login
           </Button>

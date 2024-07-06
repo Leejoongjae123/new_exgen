@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 
 export default function CarouselMain() {
-  const plugin = useRef(Autoplay({ delay: 1000, stopOnInteraction: true }));
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const images = [
     {
       image: "/images/picture1.webp",
@@ -49,8 +49,6 @@ export default function CarouselMain() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
     </Carousel>
   );
 }

@@ -127,7 +127,7 @@ export default function Component() {
         </div>
         <p className="text-center text-small">
           Already have an account?&nbsp;
-          <Link href="#" size="sm">
+          <Link href="/login" size="sm">
             Log In
           </Link>
         </p>

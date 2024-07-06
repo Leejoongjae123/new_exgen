@@ -13,8 +13,7 @@ const popularProducts = products.slice(0, 4).map((product, index) => ({
 
 export default function SecondScroll() {
   return (
-    <div className="my-auto flex w-full max-w-7xl flex-col items-start gap-2">
-      <h2 className="text-2xl font-bold tracking-tight">Popular</h2>
+    <div className="flex w-[80vw] flex-col gap-2 justify-center items-center animate-fadeIn">
       <div className="mt-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         {popularProducts.map((product) => (
           <ProductListItem key={product.id} {...product} className="w-full snap-start" />

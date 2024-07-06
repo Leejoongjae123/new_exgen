@@ -7,7 +7,7 @@ export default function FirstSection() {
         
         <Link href='https://www.naver.com' target="_blank">
         <h1 class="mb-4 text-xl font-extrabold tracking-tight leading-none text-gray-900 md:text-xl lg:text-4xl dark:text-white">
-          We invest in the world’s potential
+          공지사항
         </h1>
         </Link>
         
