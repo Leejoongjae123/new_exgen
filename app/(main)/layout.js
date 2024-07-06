@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import {NextUIProvider} from "@nextui-org/react";
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import FloatingButton from './components/FloatingButton'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,8 +18,8 @@ export default function RootLayout({ children }) {
         <NextUIProvider>
           <Navbar></Navbar>
           {children}
+          <FloatingButton></FloatingButton>
           <Footer></Footer>
-          
         </NextUIProvider>
       </body>
     </html>

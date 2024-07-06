@@ -55,7 +55,7 @@ export default function Component(props) {
           <div className="rounded-full bg-foreground text-background">
             <AcmeIcon size={34} />
           </div>
-          <span className="ml-2 font-medium md:hidden">ACME</span>
+          <span className="ml-2 font-medium md:hidden">체험단시대</span>
         </NavbarBrand>
 
         {/* Items */}
@@ -86,7 +86,7 @@ export default function Component(props) {
         </NavbarItem>
         <NavbarItem className="ml-2 !flex">
           <Button radius="full" variant="flat" onClick={handleLogin}>
-            Login
+            로그인
           </Button>
         </NavbarItem>
       </NavbarContent>
