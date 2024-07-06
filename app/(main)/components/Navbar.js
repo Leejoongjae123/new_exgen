@@ -13,7 +13,7 @@ import {
   Button,
 } from "@nextui-org/react";
 
-import {cn} from "./cn";
+import {AcmeIcon} from "./acme";
 
 const menuItems = [
   "About",
@@ -29,39 +29,37 @@ const menuItems = [
 import { useRouter } from 'next/navigation';
 
 export default function Component(props) {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const router = useRouter();
-  
   const handleLogin = () => {
     router.push('/login');
   }
   return (
     <Navbar
       {...props}
-      isBordered
       classNames={{
-        base: cn("border-default-100", {
-          "bg-default-200/50 dark:bg-default-100/50": isMenuOpen,
-        }),
-        wrapper: "w-full justify-center bg-transparent",
+        base: "py-4 backdrop-filter-none bg-transparent",
+        wrapper: "px-0 w-full justify-center bg-transparent",
         item: "hidden md:flex",
       }}
-      height="60px"
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
+      height="54px"
     >
-      <NavbarMenuToggle className="text-default-400 md:hidden" />
-
-      <NavbarBrand>
-        <div className="rounded-full bg-foreground text-background">
-        </div>
-        <span className="ml-2 font-medium">ACME</span>
-      </NavbarBrand>
       <NavbarContent
-        className="hidden h-11 gap-4 rounded-full border-small border-default-200/20 bg-background/60 px-4 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50 md:flex"
+        className="gap-4 rounded-full border-small border-default-200/20 bg-background/60 px-2 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
         justify="center"
       >
-        <NavbarItem>
+        {/* Toggle */}
+        <NavbarMenuToggle className="ml-2 text-default-400 md:hidden" />
+
+        {/* Logo */}
+        <NavbarBrand className="mr-2 w-[40vw] md:w-auto md:max-w-fit">
+          <div className="rounded-full bg-foreground text-background">
+            <AcmeIcon size={34} />
+          </div>
+          <span className="ml-2 font-medium md:hidden">ACME</span>
+        </NavbarBrand>
+
+        {/* Items */}
+        <NavbarItem className="hidden md:flex">
           <Link className="text-default-500" href="#" size="sm">
             Home
           </Link>
@@ -86,20 +84,16 @@ export default function Component(props) {
             Integrations
           </Link>
         </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="ml-2 !flex gap-2">
-          <Button
-            radius="full"
-            color='primary'
-            onClick={handleLogin}
-          >
+        <NavbarItem className="ml-2 !flex">
+          <Button radius="full" variant="flat" onClick={handleLogin}>
             Login
           </Button>
         </NavbarItem>
       </NavbarContent>
+
+      {/* Menu */}
       <NavbarMenu
-        className="top-[calc(var(--navbar-height)_-_1px)] max-h-[70vh] bg-default-200/50 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
+        className="top-[calc(var(--navbar-height)/2)] mx-auto mt-16 max-h-[40vh] max-w-[80vw] rounded-large border-small border-default-200/20 bg-background/60 py-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
         motionProps={{
           initial: {opacity: 0, y: -20},
           animate: {opacity: 1, y: 0},
