@@ -33,9 +33,9 @@ const ProductListItem = React.forwardRef(
       <div
         ref={ref}
         className={cn(
-          "relative flex w-64 max-w-full flex-none scroll-ml-6 flex-col gap-3 rounded-large bg-content1 p-4 shadow-medium",
+          "relative flex w-64 max-w-full flex-none scroll-ml-6 flex-col gap-3 rounded-large bg-white p-4 ",
           {
-            "rounded-none bg-transparent shadow-none": removeWrapper,
+            "rounded-none bg-white": removeWrapper,
           },
           className,
         )}
